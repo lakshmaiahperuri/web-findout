@@ -1,24 +1,25 @@
+import { BrowserRouter, Routes , Route } from 'react-router-dom';
 import logo from './logo.svg';
+import SignUpForm  from './components/signup';
+import LoginForm  from './components/login';
+import Layout from './components/layout';
+import OtpForm  from './components/verifyOtp';
+import ProductList from './components/products/productList';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+      </div>
+      <Routes>
+        <Route path= '/' element={<Layout/>}/>
+        <Route path='/login' element= {< LoginForm/>} />
+        <Route path='/verifyOtp' element= {< OtpForm/>} />
+        <Route path='/signup' element= {< SignUpForm/>} />
+        <Route path='/list' element={<ProductList/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
