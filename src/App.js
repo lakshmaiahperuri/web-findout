@@ -5,6 +5,8 @@ import LoginForm  from './components/login';
 import Layout from './components/layout';
 import OtpForm  from './components/verifyOtp';
 import ProductList from './components/products/productList';
+import details from './components/products/productDetails';
+import ComplexGrid from './components/userComponent';
 import './App.css';
 
 function App() {
@@ -14,6 +16,7 @@ function App() {
       </div>
       <Routes>
         <Route path= '/' element={<Layout/>}/>
+        <Route path= '/det' element={<ComplexGrid/>}/>
         <Route path='/login' element= {< LoginForm/>} />
         <Route path='/verifyOtp' element= {< OtpForm/>} />
         <Route path='/signup' element= {< SignUpForm/>} />

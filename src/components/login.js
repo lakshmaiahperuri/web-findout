@@ -42,7 +42,7 @@ function LoginForm () {
   }
   return (
     <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
-    <Card>
+    <Card variant="outlined" sx={{width:"70ch", height:"30ch" , position:"center", marginLeft:"60ch", borderRadius:"2ch"}}>
     <CardContent sx={{backgroundColor:'##12354'}} variant="outlined" align="center">
        <Typography component="h1" variant="h4" align="center">
         Login

@@ -5,6 +5,7 @@ import Paper from '@mui/material/Paper';
 import { withStyles } from '@material-ui/core/styles';
 import CardContent from '@mui/material/CardContent';
 import Card from '@mui/material/Card';
+// import CardTitle from '@mui/material/CardTitle';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -58,7 +59,8 @@ function SignUpForm () {
     }
   }
   return (
-      <Card >
+      <Card variant="outlined" sx={{width:"70ch", height:"50ch" , margin:"auto", borderRadius:"2ch"}}>
+        {/* <CardTitle>SAAAAAAA</CardTitle> */}
         <CardContent sx={{backgroundColor:'##12354'}} variant="outlined" align="center">
        <Typography component="h1" variant="h4" align="center">
           Registration
