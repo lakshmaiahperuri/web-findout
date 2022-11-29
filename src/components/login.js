@@ -1,17 +1,17 @@
 import React, { useState} from "react";
-import TextField from '@mui/material/TextField';
+// import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
+// import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import CardContent from '@mui/material/CardContent';
 import Card from '@mui/material/Card';
 import {requestOtpAPI} from '../apis/login';
-import {verifyOtpAPI} from '../apis/verifyOtp';
+// import {verifyOtpAPI} from '../apis/verifyOtp';
 import FormControl from '@mui/material/FormControl';
 import FormHelperText from '@mui/material/FormHelperText';
 import Input from '@mui/material/Input';
@@ -21,7 +21,7 @@ import InputLabel from '@mui/material/InputLabel';
 function LoginForm () {
   // States for registration
   const [userDetails, setUserDetails] = useState('');
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const requestOtp = async() => {
     console.log('otp>>>>>>>>>>>>');
     const response = await requestOtpAPI ({
@@ -68,6 +68,7 @@ function LoginForm () {
       <Button
         sx={{ mt: 6, ml: 4, width: '30ch'}}
         variant="contained"
+        onClick={() => { requestOtp() }}
         
       >
         Get OTP

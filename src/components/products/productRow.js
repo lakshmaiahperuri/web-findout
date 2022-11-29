@@ -1,18 +1,18 @@
 import React, { useState} from 'react';
-import { BrowserRouter, Routes , Route } from 'react-router-dom';
+// import { BrowserRouter, Routes , Route } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import { ToastContainer, toast } from 'react-toastify';
+// import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
-import CardContent from '@mui/material/CardContent';
+// import CardContent from '@mui/material/CardContent';
 import Card from '@mui/material/Card';
-import sampleImage from '../../assets/sampleImg';
+// import sampleImage from '../../assets/sampleImg';
 import { experimentalStyled as styled } from '@mui/material/styles';
-import ComplexGrid from '../userComponent';
+// import ComplexGrid from '../userComponent';
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -66,7 +66,7 @@ console.log('product', product);
 
 function ProductRow() {
   const navigate = useNavigate();
-  const [query, setQuery] = useState('');
+  // const [query, setQuery] = useState('');
   const openProductDetailPage = (product) => {
     console.log('AAAAAAAAAAA', product);
     navigate('/det', { state:{query:product}});

@@ -6,25 +6,25 @@ import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
 import { useLocation } from 'react-router-dom';
 import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import { BrowserRouter, Routes , Route } from 'react-router-dom';
+// import TextField from '@mui/material/TextField';
+// import { BrowserRouter, Routes , Route } from 'react-router-dom';
 import FormControl from '@mui/material/FormControl';
 import FormHelperText from '@mui/material/FormHelperText';
 import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
 
-const Img = styled('img')({
-  margin: 'auto',
-  display: 'block',
-  maxWidth: '100%',
-  maxHeight: '100%',
-});
+// const Img = styled('img')({
+//   margin: 'auto',
+//   display: 'block',
+//   maxWidth: '100%',
+//   maxHeight: '100%',
+// });
 
 export default function ComplexGrid() {
   const { state } = useLocation();
   const [qty, setQty] = useState();
   console.log('state>>>>', state);
-  const productName = state.query.name
+  // const productName = state.query.name
   const buyProduct = async(product) => {
     console.log('qty>>>>>>>>>>>>>', qty.val);
     product.quantity = qty.val;
