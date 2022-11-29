@@ -7,7 +7,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import CardContent from '@mui/material/CardContent';
 import Card from '@mui/material/Card';
 import {requestOtpAPI} from '../apis/login';
@@ -21,7 +21,7 @@ import InputLabel from '@mui/material/InputLabel';
 function LoginForm () {
   // States for registration
   const [userDetails, setUserDetails] = useState('');
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const requestOtp = async() => {
     console.log('otp>>>>>>>>>>>>');
     const response = await requestOtpAPI ({
