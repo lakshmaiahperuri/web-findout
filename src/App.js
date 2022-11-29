@@ -2,7 +2,6 @@ import { BrowserRouter, Routes , Route } from 'react-router-dom';
 import logo from './logo.svg';
 import SignUpForm  from './components/signup';
 import LoginForm  from './components/login';
-import Layout from './components/layout';
 import OtpForm  from './components/verifyOtp';
 import ProductList from './components/products/productList';
 import details from './components/products/productDetails';
