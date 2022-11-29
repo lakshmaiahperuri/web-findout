@@ -41,40 +41,41 @@ function LoginForm () {
     }
   }
   return (
-    <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
-    <Card variant="outlined" sx={{width:"70ch", height:"30ch" , position:"center", marginLeft:"60ch", borderRadius:"2ch"}}>
+    <Card variant="outlined" sx={{width:"70ch", height:"26ch" , margin:"auto", borderRadius:"4ch"}}>
+    {/* <CardTitle>SAAAAAAA</CardTitle> */}
     <CardContent sx={{backgroundColor:'##12354'}} variant="outlined" align="center">
-       <Typography component="h1" variant="h4" align="center">
-        Login
-        </Typography>
-      <Box component="form" >
-      <FormControl variant="standard">
-        <InputLabel htmlFor="component-helper">Mobile Number</InputLabel>
-        <Input sx={{ width: '75ch' }}
-          id="component-helper"
-          onChange={({target}) => setUserDetails({
-            ...userDetails,
-            mobile: target.value,
-          })}
-          aria-describedby="component-helper-text"
-        />
-        <FormHelperText id="component-helper-text">
-          Please enter your mobile number
-        </FormHelperText>
-      </FormControl>
-        <Box>
-          <Button
-            variant="contained"
-            onClick={() => { requestOtp() }}
-            sx={{ mt: 6, ml: 4, width: '30ch'}}
-          >
-            Request OTP
-          </Button>
-        </Box>
-        </Box>
-     </CardContent>
-     </Card>
-     </Paper>
+   <Typography component="h1" variant="h4" align="center">
+      Login
+    </Typography>
+  <Box variant="standard">
+  <Grid item xs={100} sm={60}>
+ <FormControl variant="standard">
+    <InputLabel htmlFor="component-helper">Enter Your Phone Number</InputLabel>
+    <Input sx={{ width: '75ch' }}
+      id="component-helper"
+      onChange={({target}) => setUserDetails({
+        ...userDetails,
+        name: target.value,
+      })}
+      aria-describedby="component-helper-text"
+    />
+    <FormHelperText id="component-helper-text">
+    Phone Number
+    </FormHelperText>
+  </FormControl>
+  </Grid>
+    <Box>
+      <Button
+        sx={{ mt: 6, ml: 4, width: '30ch'}}
+        variant="contained"
+        
+      >
+        Get OTP
+      </Button>
+    </Box>
+    </Box>
+    </CardContent>
+    </Card>
   );
 };
 
