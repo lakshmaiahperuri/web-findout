@@ -4,9 +4,9 @@ import ProductRow from './productRow';
 import Layout  from '../layout';
 
 class ProductList extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     return (
