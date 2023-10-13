@@ -41,7 +41,7 @@ function LoginForm () {
     }
   }
   return (
-    <Card variant="outlined" sx={{width:"70ch", height:"26ch" , margin:"auto", borderRadius:"4ch"}}>
+    <Card variant="outlined" sx={{width:"70ch", height:"26ch" , margin:"auto", borderRadius:"4ch", marginTop: "140px"}}>
     {/* <CardTitle>SAAAAAAA</CardTitle> */}
     <CardContent sx={{backgroundColor:'##12354'}} variant="outlined" align="center">
    <Typography component="h1" variant="h4" align="center">

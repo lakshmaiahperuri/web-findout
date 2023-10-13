@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import AppBar from '@mui/material/AppBar';
 // import Box from '@mui/material/Box';
 import { styled, alpha } from '@mui/material/styles';
@@ -9,6 +9,14 @@ import Button from '@mui/material/Button';
 import SearchIcon from '@mui/icons-material/Search';
 import AdbIcon from '@mui/icons-material/Adb';
 import InputBase from '@mui/material/InputBase';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import ClickAwayListener from '@mui/material/ClickAwayListener';
+import Grow from '@mui/material/Grow';
+import Paper from '@mui/material/Paper';
+import Popper from '@mui/material/Popper';
+import MenuItem from '@mui/material/MenuItem';
+import Menu from '@mui/material/Menu';
+import Stack from '@mui/material/Stack';
 // import ProductList  from './products/productList';
 
 // const pages = ['Products', 'Pricing', 'Blog'];
@@ -54,11 +62,25 @@ function Layout() {
       },
     },
   }));
+  const [open, setOpen] = React.useState(false);
+  const anchorRef = React.useRef<HTMLButtonElement>(null);
+  const contextValue = useContext('');
+  console.log('conetctttttttttt', contextValue);
+
+  const handleToggle = () => {
+    setOpen((prevOpen) => !prevOpen);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
    <AppBar>
     <Container maxWidth="xl">
     <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+      
+      <div style={{flexGrow: 1, display: 'flex'}}>
+        <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -102,8 +124,59 @@ function Layout() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-          <Button color="inherit">Logout</Button>
-          </Toolbar>
+      </div>
+      <AccountCircleIcon sx={{ height: 50, width: 50}}  onClick={handleToggle}></AccountCircleIcon>
+      <Popper
+          open={open}
+          anchorEl={anchorRef.current}
+          role={undefined}
+          // placement="bottom-start"
+          transition
+          disablePortal
+        >
+          {({ TransitionProps, placement }) => (
+            <Grow
+              {...TransitionProps}
+              style={{
+                transformOrigin:'right-end'
+              }}
+            >
+              <Paper sx={{}}>
+                <ClickAwayListener onClickAway={handleClose} >
+                  <Menu
+                    id="fade-menu"
+                    MenuListProps={{
+                      'aria-labelledby': 'fade-button',
+                      style: {
+                        padding: 30,
+                        marginTop: 10,
+                        backgroundColor:'red',
+  
+                      },
+                    }}
+                    anchorEl={anchorRef}
+                    open={open}
+                    onClose={handleClose} 
+                    // anchorOrigin={{ vertical: "top", horizontal: "right" }}
+                    // transformOrigin={{ vertical: "top", horizontal: "right" }}
+                    PaperProps={{
+                      // style: {
+                      //   left: '50%',
+                      //   top: '100%',
+                      //   transform: 'translateX(-77%) translateY(32%)',
+                      // }
+                    }}
+                  >
+                    <MenuItem onClick={handleClose}>Profile</MenuItem>
+                    <MenuItem onClick={handleClose}>My account</MenuItem>
+                    <MenuItem onClick={handleClose}>Logout</MenuItem>
+                  </Menu>
+                </ClickAwayListener>
+              </Paper>
+            </Grow>
+          )}
+        </Popper>
+    </Toolbar>
     </Container>
     </AppBar>
   );
